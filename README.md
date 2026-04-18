@@ -14,3 +14,9 @@ Lista de usuarios:
 - Laura Perez
 - Miguel Garcia
 - Carmen Lopez
+
+#Instalar estas depencias:
+-- JQuery
+-- Bootstrap
+-- ES6
+-- Node.js
