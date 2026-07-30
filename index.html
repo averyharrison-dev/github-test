@@ -1,1 +1,143 @@
-Se creo un archivo html para hacer pruebas en GitHub.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruta Moto: motocicletas urbanas y de aventura, servicio técnico y asesoría personalizada.">
+  <title>Ruta Moto | Tu próxima aventura comienza aquí</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Ruta Moto, inicio">
+        <span class="brand-mark" aria-hidden="true">➜</span>
+        Ruta Moto
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#modelos">Modelos</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <p class="eyebrow">Libertad sobre dos ruedas</p>
+        <h1>Tu ruta.<br>Tu historia.</h1>
+        <p class="hero-copy">Motocicletas listas para la ciudad, la carretera y todo lo que quieras descubrir. Encuentra la que encaja contigo.</p>
+        <div class="hero-actions">
+          <a class="button" href="#modelos">Ver motocicletas</a>
+          <a class="button button--outline" href="#contacto">Agendar una prueba</a>
+        </div>
+        <div class="hero-stats" aria-label="Datos destacados">
+          <div><strong>5 años</strong><span>acompañando rutas</span></div>
+          <div><strong>+300</strong><span>clientes felices</span></div>
+          <div><strong>12 meses</strong><span>de garantía</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modelos">
+      <div class="container">
+        <div class="models-head">
+          <div>
+            <p class="eyebrow">Elige tu estilo</p>
+            <h2 class="section-title">Una moto para cada ruta</h2>
+          </div>
+          <p class="section-copy">Modelos versátiles, confiables y con personalidad. Visítanos para conocer la disponibilidad y recibir una cotización.</p>
+        </div>
+
+        <div class="models-visual">
+          <img src="images/modelos-motocicletas.png" alt="Tres motocicletas: urbana, de aventura y clásica" loading="lazy">
+          <div class="model-cards">
+            <article class="model-card">
+              <small>Ágil</small>
+              <h3>Urban 250</h3>
+              <p>Ligera y práctica para dominar la ciudad.</p>
+            </article>
+            <article class="model-card">
+              <small>Versátil</small>
+              <h3>Terra 400</h3>
+              <p>Preparada para carretera y nuevos caminos.</p>
+            </article>
+            <article class="model-card">
+              <small>Auténtica</small>
+              <h3>Classic 300</h3>
+              <p>Diseño atemporal con manejo moderno.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" id="beneficios">
+      <div class="container">
+        <p class="eyebrow">Rodamos contigo</p>
+        <h2 class="section-title">Más que vender motocicletas</h2>
+        <div class="benefit-grid">
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Asesoría honesta</h3>
+            <p>Te ayudamos a elegir según tu experiencia, uso y presupuesto, sin complicaciones.</p>
+          </article>
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">⚙</div>
+            <h3>Taller especializado</h3>
+            <p>Mantenimiento preventivo y repuestos para mantener tu moto siempre lista.</p>
+          </article>
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">◆</div>
+            <h3>Financiamiento flexible</h3>
+            <p>Opciones de pago pensadas para que empieces tu próxima ruta muy pronto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow">¿Listo para rodar?</p>
+          <h2 class="section-title">Conoce tu próxima motocicleta en persona.</h2>
+          <p class="section-copy">Agenda una visita o una prueba de manejo. Nuestro equipo estará encantado de atenderte.</p>
+        </div>
+        <aside class="contact-box">
+          <h3>Visítanos</h3>
+          <p>Av. Principal 123, Lima<br>Lun–Sáb · 9:00 a. m. – 6:00 p. m.<br>+51 999 123 456</p>
+          <a class="button" href="mailto:ventas@rutamoto.pe?subject=Quiero%20agendar%20una%20prueba">Agendar por correo</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="brand">Ruta Moto</span>
+      <p>© <span id="year"></span> Ruta Moto. Hecho para recorrer nuevos caminos.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "☰";
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

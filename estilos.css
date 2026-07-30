@@ -1,0 +1,442 @@
+:root {
+  --orange: #f59e0b;
+  --orange-dark: #d97706;
+  --ink: #111827;
+  --muted: #6b7280;
+  --paper: #f7f7f5;
+  --white: #ffffff;
+  --line: #e5e7eb;
+  --max: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--max));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--orange-dark);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: .55rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+
+.section-copy {
+  max-width: 600px;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--orange);
+  color: var(--ink);
+  font-weight: 800;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.button:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+}
+
+.button--outline {
+  border-color: rgba(255, 255, 255, .45);
+  background: rgba(17, 24, 39, .3);
+  color: var(--white);
+  backdrop-filter: blur(8px);
+}
+
+.button--outline:hover {
+  background: rgba(255, 255, 255, .12);
+}
+
+header {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+  color: var(--white);
+}
+
+nav {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: 1.25rem;
+  transform: rotate(-12deg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+.menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 760px;
+  align-items: center;
+  overflow: hidden;
+  color: var(--white);
+  background: #101216;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(5, 8, 12, .92) 0%, rgba(5, 8, 12, .62) 40%, rgba(5, 8, 12, .06) 76%),
+    linear-gradient(0deg, rgba(5, 8, 12, .58), transparent 42%),
+    url("images/hero-motocicleta.png") center / cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  padding-top: 70px;
+}
+
+.hero .eyebrow {
+  color: #fbbf24;
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: clamp(3.2rem, 8vw, 6.3rem);
+  line-height: .95;
+  letter-spacing: -.065em;
+}
+
+.hero-copy {
+  max-width: 540px;
+  margin-top: 1.5rem;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.hero-stats strong {
+  display: block;
+  color: var(--orange);
+  font-size: 1.55rem;
+}
+
+.hero-stats span {
+  color: #d1d5db;
+  font-size: .83rem;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.models-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.models-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  border-radius: 28px;
+  background: #171717;
+  box-shadow: 0 28px 70px rgba(17, 24, 39, .14);
+}
+
+.models-visual img {
+  height: 520px;
+  object-fit: cover;
+}
+
+.model-cards {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.model-card {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 16px;
+  background: rgba(11, 13, 16, .78);
+  color: var(--white);
+  backdrop-filter: blur(12px);
+}
+
+.model-card small {
+  color: var(--orange);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.model-card h3 {
+  margin-top: .2rem;
+  font-size: 1.2rem;
+}
+
+.model-card p {
+  color: #d1d5db;
+  font-size: .82rem;
+}
+
+.benefits {
+  background: var(--white);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.benefit {
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--white);
+}
+
+.benefit-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+  place-items: center;
+  border-radius: 14px;
+  background: #fef3c7;
+  font-size: 1.4rem;
+}
+
+.benefit h3 {
+  font-size: 1.15rem;
+}
+
+.benefit p {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.cta {
+  padding: 80px 0;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.cta .section-title {
+  max-width: 650px;
+}
+
+.contact-box {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .05);
+}
+
+.contact-box p {
+  color: #d1d5db;
+}
+
+.contact-box .button {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+footer {
+  padding: 26px 0;
+  border-top: 1px solid #2d3748;
+  background: var(--ink);
+  color: #9ca3af;
+  font-size: .85rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 760px) {
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 76px;
+    right: 20px;
+    display: none;
+    width: min(280px, calc(100% - 40px));
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 14px;
+    background: rgba(17, 24, 39, .96);
+  }
+
+  .nav-links.open {
+    display: grid;
+  }
+
+  .hero {
+    min-height: 700px;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(90deg, rgba(5, 8, 12, .9), rgba(5, 8, 12, .38)),
+      linear-gradient(0deg, rgba(5, 8, 12, .7), transparent 55%),
+      url("images/hero-motocicleta.png") 64% center / cover no-repeat;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+  }
+
+  section {
+    padding: 75px 0;
+  }
+
+  .models-head,
+  .footer-inner {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .models-visual,
+  .models-visual img {
+    min-height: 580px;
+  }
+
+  .models-visual img {
+    object-position: 52% center;
+  }
+
+  .model-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-grid,
+  .cta-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-inner {
+    gap: 2rem;
+  }
+}
