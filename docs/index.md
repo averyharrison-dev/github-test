@@ -16,4 +16,4 @@ Este es un sitio creado para practicar **GitHub Pages**.
 
 ## Objetivo
 
-Aprender a publicar proyectos y utilizar temas de Jekyll.
+Aprender a publicar proyectos utilizando GitHub Pages.
