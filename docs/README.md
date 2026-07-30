@@ -1,3 +1,19 @@
-Este es el readme que se va a mostrar en la GitHub Page
+---
+layout: default
+title: Inicio
+---
 
-Esta es la GitHub Pages para presentar el repositorio
+# GitHub Test
+
+Este es un sitio creado para practicar **GitHub Pages**.
+
+## Contenido del proyecto
+
+- HTML
+- CSS
+- JavaScript
+- Git y GitHub
+
+## Objetivo
+
+Aprender a publicar proyectos y utilizar temas de Jekyll.
